@@ -4,7 +4,7 @@ services:
     image: mysql/mysql-server:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: 'empoyee_system'
+      MYSQL_DATABASE: 'employee_system'
       MYSQL_USER: 'user'
       MYSQL_PASSWORD: 'password'
       MYSQL_ROOT_PASSWORD: 'password'
