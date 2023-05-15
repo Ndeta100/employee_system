@@ -13,14 +13,15 @@ import java.util.Map;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/")
+@CrossOrigin(origins = "http://localhost:3000")
 public class EmployeeController {
     EmployeeService employeeService;
 
-    @PostMapping("/employees")
+    @PostMapping("/employee")
     public Employee createEmployee(@RequestBody Employee employee){
         return  employeeService.createEmployee(employee);
     }
-    @GetMapping("/employees")
+    @GetMapping("/employee")
     public List<Employee> getAllEmployees(){
         return  employeeService.getAllEmployees();
     }
@@ -32,6 +33,7 @@ public class EmployeeController {
         response.put("deleted",deleted);
         return ResponseEntity.ok(response);
     }
+    
     @GetMapping("/employee/{id}")
     public ResponseEntity<Employee>getEmployeeById(@PathVariable Long id){
         Employee employee=null;
